@@ -119,7 +119,6 @@ if (menuLinks.length > 0) {
 // Изменение Header'а при скроле
 /* =============================================== */
 const headerElement = document.querySelector(".header");
-
 const callback = function (entries, observer) {
     if (entries[0].isIntersecting) {
         headerElement.classList.remove("scroll");
@@ -127,11 +126,24 @@ const callback = function (entries, observer) {
         headerElement.classList.add("scroll");
     }
 };
-
 const headerObserver = new IntersectionObserver(callback);
 headerObserver.observe(headerElement);
 
 
+/* =============================================== */
+// Ibg
+/* =============================================== */
+function ibg() {
+
+    let ibg = document.querySelectorAll(".ibg");
+    for (var i = 0; i < ibg.length; i++) {
+        if (ibg[i].querySelector('img')) {
+            ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
+        }
+    }
+}
+ibg();
+/* =============================================== */
 
 
 
