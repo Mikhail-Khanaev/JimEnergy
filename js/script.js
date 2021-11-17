@@ -461,7 +461,32 @@ const da = new DynamicAdapt("max");
 da.init();
 /* =============================================== */
 
+function readMore() {
+    let dots = document.getElementById("dots");
+    let more = document.querySelectorAll(".projects-more");
+    let btnMore = document.getElementById("btn-more");
 
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        for (let index = 0; index < more.length; index++) {
+            let currentMore = more[index];
+            currentMore.style.display = "none";
+            currentMore.classList.remove("active");
+        }
+        btnMore.classList.add("more");
+
+    } else {
+        dots.style.display = "none";
+        for (let index = 0; index < more.length; index++) {
+            let currentMore = more[index];
+            currentMore.style.display = "block";
+            currentMore.classList.add("active");
+        }
+        btnMore.classList.remove("more");
+
+    }
+
+}
 
 /* =============================================== */
 // Полифилы
