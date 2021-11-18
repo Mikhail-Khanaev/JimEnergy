@@ -80,11 +80,13 @@ if (iconMenu) {
 // Собираем массив элементов, которые имеют класс "menu__link"
 // и при этом имеют атрибут "data-goto"
 const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
+const noneMenuLink = document.querySelector(".intro__button[data-goto]");
 if (menuLinks.length > 0) {
     for (let i = 0; i < menuLinks.length; i++) {
         let menuLink = menuLinks[i];
-        menuLink.addEventListener("click", onMenuClick)
+        menuLink.addEventListener("click", onMenuClick);
     };
+    noneMenuLink.addEventListener("click", onMenuClick);
 
     function onMenuClick(e) {
         const menuLink = e.target;
@@ -213,8 +215,8 @@ function bodyLock() {
 
     if (lockPadding.length > 0) {
         for (let index = 0; index < lockPadding.length; index++) {
-            const element = lockPadding[index];
-            element.style.paddingRight = lockPaddingValue;
+            const el = lockPadding[index];
+            el.style.paddingRight = lockPaddingValue;
         }
     }
 
@@ -662,7 +664,7 @@ window.addEventListener('DOMContentLoaded', function () {
 function InputMask(options) {
     this.el = this.getElement(options.selector);
     if (!this.el) return console.log('Что-то не так с селектором');
-    this.layout = options.layout || '+_ (___) ___-__-__';
+    this.layout = options.layout || '+7 (___) ___-__-__';
     this.maskreg = this.getRegexp();
 
     this.setListeners();
