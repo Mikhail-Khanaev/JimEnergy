@@ -1126,15 +1126,12 @@ body.pc .intro__image {
   padding: 0 30px;
   background-color: transparent;
   border: 1px solid #fff;
+  font-size: 16px;
+  color: #fff;
   opacity: 0;
   -webkit-transition: all 0.8s ease;
   -o-transition: all 0.8s ease;
   transition: all 0.8s ease;
-}
-
-.show-more p {
-  font-size: 16px;
-  color: #fff;
 }
 
 .show-more picture,
@@ -1720,7 +1717,7 @@ body.pc .intro__image {
     font-size: calc(12px + 8 * ((100vw - 320px) / 940));
   }
 
-  .show-more p {
+  .show-more {
     font-size: calc(12px + 4 * ((100vw - 320px) / 940));
   }
 
