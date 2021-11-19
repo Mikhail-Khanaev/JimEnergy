@@ -1756,6 +1756,14 @@ body.pc .intro__image {
 @media (max-width: 1024px) {
   .feedback__map {
     aspect-ratio: 9.6/9.4;
+    width: 100%;
+    height: 960px;
+  }
+}
+
+@media (max-width: 1024px) and (max-width: 1260px) {
+  .feedback__map {
+    height: calc(300px + 660 * ((100vw - 320px) / 940));
   }
 }
 
